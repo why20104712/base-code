@@ -23,15 +23,3 @@
 /dist/
 /nbdist/
 /.nb-gradle/
-/dynamic-proxy/mvnw.cmd
-/dynamic-proxy/mvnw
-/mvnw.cmd
-/mvnw
-/.mvn/
-/dynamic-proxy/.mvn/
-/dynamic-proxy/target/
-/mybatis-plus/.mvn/
-/mybatis-plus/target/
-/mybatis-plus/mvnw
-/mybatis-plus/mybatis-plus.iml
-/mybatis-plus/mvnw.cmd
