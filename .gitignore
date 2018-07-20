@@ -35,3 +35,8 @@
 /mybatis-plus/mvnw
 /mybatis-plus/mybatis-plus.iml
 /mybatis-plus/mvnw.cmd
+/java/.mvn/
+/java/target/
+/java/mvnw
+/java/mvnw.cmd
+/java/java.iml
