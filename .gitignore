@@ -40,3 +40,13 @@
 /java/mvnw
 /java/mvnw.cmd
 /java/java.iml
+/mybatis/.mvn/
+/mybatis/target/
+/mybatis/mvnw
+/mybatis/mybatis.iml
+/mybatis/mvnw.cmd
+.mvn/
+mvnw
+mvnw.cmd
+src/main/resources/static/
+src/main/resources/templates/

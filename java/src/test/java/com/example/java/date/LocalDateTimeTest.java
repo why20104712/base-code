@@ -151,6 +151,8 @@ public class LocalDateTimeTest {
         ZoneId zoneId = ZoneId.systemDefault();
         LocalDateTime localDateTime = instant.atZone(zoneId).toLocalDateTime();
         System.out.println(localDateTime.toString());
+        System.out.println(localDateTime.getDayOfMonth());
+        System.out.println(localDateTime.getHour());
         System.out.println(date);
     }
 
