@@ -1,4 +1,4 @@
-package com.example.mybatisplus.bean;
+package com.example.mybatisplus.employee.bean;
 
 import lombok.Data;
 

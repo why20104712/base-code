@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
  * 或者在mapper上使用mapper注解
  */
 @Configuration
-@MapperScan("com.example.mybatis.mapper")
+@MapperScan("com.example.mybatis.mappers")
 public class MybatisConfig {
 
 }

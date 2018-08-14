@@ -1,11 +1,11 @@
-package com.example.mybatisplus.service.impl;
+package com.example.mybatisplus.employee.service.impl;
 
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
-import com.example.mybatisplus.bean.Employee;
-import com.example.mybatisplus.mapper.EmployeeMapper;
-import com.example.mybatisplus.service.EmployeeService;
+import com.example.mybatisplus.employee.bean.Employee;
+import com.example.mybatisplus.employee.mapper.EmployeeMapper;
+import com.example.mybatisplus.employee.service.EmployeeService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

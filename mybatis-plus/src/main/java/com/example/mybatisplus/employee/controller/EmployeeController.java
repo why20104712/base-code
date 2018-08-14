@@ -1,10 +1,10 @@
-package com.example.mybatisplus.controller;
+package com.example.mybatisplus.employee.controller;
 
 
 import com.baomidou.mybatisplus.plugins.Page;
-import com.example.mybatisplus.bean.Employee;
-import com.example.mybatisplus.mapper.EmployeeMapper;
-import com.example.mybatisplus.service.EmployeeService;
+import com.example.mybatisplus.employee.bean.Employee;
+import com.example.mybatisplus.employee.mapper.EmployeeMapper;
+import com.example.mybatisplus.employee.service.EmployeeService;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
