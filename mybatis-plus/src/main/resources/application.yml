@@ -1,5 +1,4 @@
 
-
 mybatis-plus:
   # 如果是放在src/main/java目录下 classpath:/com/yourpackage/*/mappers/*Mapper.xml
   # 如果是放在resource目录 classpath:/mappers/*Mapper.xml
@@ -44,4 +43,6 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/mp
     username: root
     password: root
+  profiles:
+    active: dev
 
