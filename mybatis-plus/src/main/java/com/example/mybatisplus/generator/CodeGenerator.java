@@ -16,6 +16,7 @@ import java.util.Map;
 
 /**
  * 代码生成器
+ *
  * @author wanghaiyang
  * @date 2018/8/14 17:13
  */
@@ -42,17 +43,17 @@ public class CodeGenerator {
         gc.setAuthor("why");
 
         // 自定义文件命名，注意 %s 会自动填充表实体属性！
-        // gc.setMapperName("%sDao");
-        // gc.setXmlName("%sDao");
-        // gc.setServiceName("MP%sService");
-        // gc.setServiceImplName("%sServiceDiy");
-        // gc.setControllerName("%sAction");
+        gc.setMapperName("%sMapper");
+        gc.setXmlName("%sMapper");
+        gc.setServiceName("%sService");
+        gc.setServiceImplName("%sServiceImpl");
+        gc.setControllerName("%sController");
         mpg.setGlobalConfig(gc);
 
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
         dsc.setDbType(DbType.MYSQL);
-        dsc.setTypeConvert(new MySqlTypeConvert(){
+        dsc.setTypeConvert(new MySqlTypeConvert() {
             // 自定义数据库表字段类型转换【可选】
             @Override
             public DbColumnType processTypeConvert(String fieldType) {
@@ -71,11 +72,11 @@ public class CodeGenerator {
         StrategyConfig strategy = new StrategyConfig();
         // strategy.setCapitalMode(true);// 全局大写命名 ORACLE 注意
         // 此处可以修改为您的表前缀
-        strategy.setTablePrefix(new String[] { "tbl" });
+        strategy.setTablePrefix(new String[]{"tbl"});
         // 表名生成策略
         strategy.setNaming(NamingStrategy.underline_to_camel);
         // 需要生成的表
-         strategy.setInclude(new String[] { "tbl_user" });
+        strategy.setInclude(new String[]{"tbl_user"});
         // 排除生成的表
         // strategy.setExclude(new String[]{"test"});
         // 自定义实体父类
@@ -101,6 +102,11 @@ public class CodeGenerator {
         // 包配置
         PackageConfig pc = new PackageConfig();
         pc.setParent("com.example.mybatisplus");
+        pc.setController("controller");
+//        pc.setEntity("entity");
+//        pc.setMapper("mapper");
+//        pc.setService("service");
+//        pc.setServiceImpl("impl");
         pc.setModuleName("user");
         mpg.setPackageInfo(pc);
 
@@ -130,16 +136,16 @@ public class CodeGenerator {
         focList.add(new FileOutConfig("/templates/mapper.xml.vm") {
             @Override
             public String outputFile(TableInfo tableInfo) {
-                return "/Users/why/IdeaProjects/86links/base-code/mybatis-plus/src/main/resources/mappers/" + tableInfo.getEntityName() + ".xml";
+                return "/Users/why/IdeaProjects/86links/base-code/mybatis-plus/src/main/resources/mappers/" + tableInfo.getEntityName() + "Mapper.xml";
             }
         });
         cfg.setFileOutConfigList(focList);
         mpg.setCfg(cfg);
 
         // 关闭默认 xml 生成，调整生成 至 根目录
-//        TemplateConfig tc = new TemplateConfig();
-//        tc.setXml(null);
-//        mpg.setTemplate(tc);
+        TemplateConfig tc = new TemplateConfig();
+        tc.setXml(null);
+        mpg.setTemplate(tc);
 
         // 自定义模板配置，可以 copy 源码 mybatis-plus/src/main/resources/templates 下面内容修改，
         // 放置自己项目的 src/main/resources/templates 目录下, 默认名称一下可以不配置，也可以自定义模板名称
@@ -160,8 +166,6 @@ public class CodeGenerator {
         System.err.println(mpg.getCfg().getMap().get("abc"));
 
     }
-
-
 
 
 }

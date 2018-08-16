@@ -45,8 +45,8 @@ public class MybatisPlusUtils {
         // 自定义文件命名，注意 %s 会自动填充表实体属性！
         gc.setMapperName("%sMapper");
         gc.setXmlName("%sMapper");
-        gc.setServiceName("I%sService");
-        gc.setServiceImplName("I%sServiceImpl");
+        gc.setServiceName("%sService");
+        gc.setServiceImplName("%sServiceImpl");
         gc.setControllerName("%sController");
         mpg.setGlobalConfig(gc);
 
