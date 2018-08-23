@@ -40,7 +40,7 @@ spring:
     name: mybatis-plus
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/mp
+    url: jdbc:mysql://127.0.0.1:3306/mp?useSSL=false
     username: root
     password: root
   profiles:

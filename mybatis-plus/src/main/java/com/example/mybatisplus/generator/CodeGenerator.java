@@ -142,7 +142,7 @@ public class CodeGenerator {
         cfg.setFileOutConfigList(focList);
         mpg.setCfg(cfg);
 
-        // 关闭默认 xml 生成，调整生成 至 根目录
+        // 关闭默认xml生成
         TemplateConfig tc = new TemplateConfig();
         tc.setXml(null);
         mpg.setTemplate(tc);
