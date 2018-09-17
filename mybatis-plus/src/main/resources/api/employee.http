@@ -1,0 +1,42 @@
+# For a quick start check out our HTTP Requests collection (Tools|HTTP Client|Open HTTP Requests Collection).
+#
+# Following HTTP Request Live Templates are available:
+# * 'gtrp' and 'gtr' create a GET request with or without query parameters;
+# * 'ptr' and 'ptrp' create a POST request with a simple or parameter-like body;
+# * 'mptr' and 'fptr' create a POST request to submit a form with a text or file field (multipart/form-data);
+
+### 按照id查询
+GET http://localhost:1111/employee/1
+Accept: application/json
+
+### 分页查询
+GET http://localhost:1111/employee/page
+Accept: application/json
+
+### 新增
+POST http://localhost:1111/employee
+Content-Type: application/json
+
+{
+  "lastName": "1",
+  "age": 2,
+  "email": "22@",
+  "gender": 1
+}
+
+### 修改
+PUT http://localhost:1111/employee
+Content-Type: application/json
+
+{
+  "lastName": "1",
+  "age": 20,
+  "email": "22@",
+  "gender": 100,
+  "id": 2
+}
+
+### 删除
+DELETE http://localhost:1111/employee/1
+
+###
