@@ -1,7 +1,9 @@
 package com.example.spring.bean;
 
 import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @Data
 public class Person {
 
@@ -16,5 +18,12 @@ public class Person {
         this.name = "name";
         this.age = 20;
         this.phone = "15656236536";
+
+        log.warn("调用person初始化init======");
     }
+
+    public Person() {
+        log.warn("调用person无参数构造器");
+    }
+
 }

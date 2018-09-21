@@ -28,5 +28,28 @@ public class BeanConfigTest {
         System.out.println(person);
 
 
+        annotationConfigApplicationContext.close();
     }
+
+    @Test
+    public void testImport(){
+        AnnotationConfigApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext(BeanConfig.class);
+
+        log.warn("容器中bean的数量：{}", annotationConfigApplicationContext.getBeanDefinitionCount());
+
+        String[] beanDefinitionNames = annotationConfigApplicationContext.getBeanDefinitionNames();
+        log.warn("======容器中的bean======");
+        for (String beanDefinitionName : beanDefinitionNames) {
+            log.warn(beanDefinitionName);
+        }
+        //工厂Bean获取的是调用getObject创建的对象
+        Object bean2 = annotationConfigApplicationContext.getBean("personFactoryBean");
+        Object bean3 = annotationConfigApplicationContext.getBean("personFactoryBean");
+        log.warn("bean的类型：", bean2.getClass());
+        log.warn("是否单例，是否为同一个对象：{}", bean2 == bean3);
+
+        Object bean4 = annotationConfigApplicationContext.getBean("&personFactoryBean");
+        log.warn("工厂bean的类型：{}",bean4.getClass());
+    }
+
 }
