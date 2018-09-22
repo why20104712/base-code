@@ -1,5 +1,6 @@
 package com.example.spring.config;
 
+import com.example.spring.apsect.MathCalc;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -25,8 +26,11 @@ public class BeanConfigTest {
 
 
         Object person = annotationConfigApplicationContext.getBean("person");
-        System.out.println(person);
+        log.warn("person对象为：{}",person);
 
+
+        MathCalc mathCalc = (MathCalc) annotationConfigApplicationContext.getBean("mathCalc");
+        mathCalc.div(2, 0);
 
         annotationConfigApplicationContext.close();
     }

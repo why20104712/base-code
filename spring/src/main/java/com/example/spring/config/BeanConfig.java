@@ -1,5 +1,7 @@
 package com.example.spring.config;
 
+import com.example.spring.apsect.LogAspect;
+import com.example.spring.apsect.MathCalc;
 import com.example.spring.bean.Color;
 import com.example.spring.bean.Person;
 import com.example.spring.beanregister.RedBeanRegister;
@@ -8,12 +10,14 @@ import com.example.spring.initializingbean.PersonInitializingBean;
 import com.example.spring.postprocess.PersonPostProcessor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.Import;
 
 /**
  * @author wanghaiyang
  * @date 2018/9/21 11:27
  */
+@EnableAspectJAutoProxy
 @Configuration
 @Import({Color.class, RedBeanRegister.class})//bean的名称为全类名com.example.spring.bean.Color
 public class BeanConfig {
@@ -103,5 +107,15 @@ public class BeanConfig {
     @Bean
     public PersonInitializingBean personInitializingBean() {
         return new PersonInitializingBean();
+    }
+
+    @Bean
+    public MathCalc mathCalc() {
+        return new MathCalc();
+    }
+
+    @Bean
+    public LogAspect logAspect() {
+        return new LogAspect();
     }
 }
